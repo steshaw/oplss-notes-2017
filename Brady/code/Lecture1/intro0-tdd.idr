@@ -2,13 +2,14 @@
 -- Example 1: Types are first class; compute/manipulate types
 
 StringOrNat : (isStr : Bool) -> Type
-
-
-
+StringOrNat False = String
+StringOrNat True = Nat
 
 -- Example 2: Types of one thing can influence types of another
 
 lengthOrDouble : (isStr : Bool) -> StringOrNat isStr -> Nat
+lengthOrDouble False string = length string
+lengthOrDouble True n = n
 
 
 
